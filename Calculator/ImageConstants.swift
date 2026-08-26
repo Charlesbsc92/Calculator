@@ -13,3 +13,7 @@ let foregroundRightButtonColor:Color = Color("foregroundRightButtonColor")
 let foregroundTopButtonColor:Color = Color("foregroundTopButtonColor")
 let primaryBackgroundColor:Color = Color("primaryBackground")
 let secondaryBackgroundColor:Color = Color("SecondaryBackground")
+let sunMoonSelectedColor:Color = Color("sunMoonSelectedColor")
+let sunMoonNotSelectedColor:Color = Color("sunMoonNotSelectedColor")
+
+

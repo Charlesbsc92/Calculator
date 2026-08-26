@@ -10,17 +10,25 @@ import SwiftUI
 struct MainCalculatorView: View {
     
     @State var isLightMode:Bool = true
-    @State var currentComputation:String = ""
+    @State var currentComputation:String = "4+3+2"
     @State var mainResult:String = "0"
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            primaryBackgroundColor.ignoresSafeArea()
+            VStack {
+                SunMoonView(isLightMode:isLightMode)
+                    .onTapGesture {
+                        self.isLightMode.toggle()
+                    }
+                Spacer()
+                ComputationView(mainResult:mainResult,currentComputation:currentComputation)
+                Spacer()
+                CalsButtonView(currentComputation:$currentComputation, mainResult:$mainResult)
+            }
+            .padding()
         }
-        .padding()
+        .environment(\.colorScheme,isLightMode ? .light : .dark)
     }
 }
 
